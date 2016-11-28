@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ISudokuBoard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SudokuBoard.cs" />
     <Compile Include="SudokuBoardContract.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
