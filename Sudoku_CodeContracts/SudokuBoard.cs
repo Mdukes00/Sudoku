@@ -90,12 +90,44 @@ namespace Sudoku_CodeContracts
 
         public bool IsBoardEmpty()
         {
-            throw new NotImplementedException();
+            bool isEmpty = true;
+            Parallel.For(0, 10, row =>
+              {
+                  Parallel.For(0, 10, col =>
+                  {
+                      if (Board[row, col].ToString() != null)
+                      {
+                          isEmpty = false;
+                      }
+                  });
+              });
+
+            if (isEmpty == false)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public bool IsBoardFull()
         {
-            throw new NotImplementedException();
+            for (int row = 0; row < 10; row++)
+            {
+                {
+                    for (int col = 0; col < 10; col++)
+                    {
+                        if (Board[row, col].ToString() == null)
+                        {
+                            return false;
+                        }
+                    }
+                }
+
+            }
+            return true;
         }
 
         public void ResetBoard()
