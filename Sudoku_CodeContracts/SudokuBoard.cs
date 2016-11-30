@@ -18,8 +18,18 @@ namespace Sudoku_CodeContracts
 
         public void GenerateNumbers()
         {
-            IsBoardEmpty();
-        }
+            if (IsBoardEmpty())
+            {
+                Random ran = new Random();
+                int gen;
+                gen = ran.Next(1, 9 + 1);
+                while (BoardToList().Count() < 23)
+                {
+
+                    BoardToList().Add(gen);
+                }
+            }
+            }
 
         public void InputNumber(int number, int x, int y)
         {
@@ -43,28 +53,8 @@ namespace Sudoku_CodeContracts
 
         public bool IsBoardEmpty()
         {
-            Random ran = new Random();
-            int gen;
-            gen = ran.Next(1, 9 + 1);
-            if (BoardToList().Count > 23)
-            {
-                return true;
-                
-            }
-            else
-            {
-                while (BoardToList().Count() < 23)
-                {
-
-                    BoardToList().Add(gen);
-                    if (BoardToList().Count() > 23)
-                    {
-                        return true;
-                    }
-                }
-                return true;
-            }
-       }
+            throw new NotImplementedException();
+        }
         
 
         public List<int> BoardToList()
